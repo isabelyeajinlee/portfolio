@@ -1,0 +1,90 @@
+# macOS specific files and directories
+.DS_Store
+.Trash/
+Music/
+Pictures/
+Library/
+Applications/
+Desktop/
+Documents/
+Downloads/
+Movies/
+Public/
+
+# Visual Studio Code
+.vscode/
+
+# Backup and log files
+*.bak
+*.swp
+*.log
+*.log.*
+
+# Other files/folders to ignore
+*.swp
+.gitignore.save
+
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Ignore common folders
+Desktop/
+Documents/
+Downloads/
+Library/
+Movies/
+Music/
+Pictures/
+Public/
+
+# Ignore application and user-specific files
+.adobe/
+.cups/
+.zsh_history
+.zsh_sessions/
+Creative Cloud Files/
+Applications/
+
+# IDE and editor files
+.vscode/
+
+# Backup files
+*.bak
+*.swp
+*.log
+*.log.*
+
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Ignore common folders
+Desktop/
+Documents/
+Downloads/
+Library/
+Movies/
+Music/
+Pictures/
+Public/
+
+# Ignore application and user-specific files
+.adobe/
+.cups/
+.zsh_history
+.zsh_sessions/
+Creative Cloud Files/
+Applications/
+.vscode/
+
+# Backup files
+*.bak
+*.swp
+*.log
+*.log.*
+
+
