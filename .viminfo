@@ -11,6 +11,8 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:wq
+|2,0,1739128395,,"wq"
 
 # Search String History (newest to oldest):
 
@@ -23,12 +25,22 @@
 # Registers:
 
 # File marks:
-'0  20  0  ~/.git/COMMIT_EDITMSG
-|4,48,20,0,1739128250,"~/.git/COMMIT_EDITMSG"
-'1  50  0  ~/.git/rebase-merge/git-rebase-todo
-|4,49,50,0,1739127897,"~/.git/rebase-merge/git-rebase-todo"
+'0  22  0  ~/.git/COMMIT_EDITMSG
+|4,48,22,0,1739128395,"~/.git/COMMIT_EDITMSG"
+'1  20  0  ~/.git/COMMIT_EDITMSG
+|4,49,20,0,1739128250,"~/.git/COMMIT_EDITMSG"
+'2  20  0  ~/.git/COMMIT_EDITMSG
+|4,50,20,0,1739128250,"~/.git/COMMIT_EDITMSG"
+'3  50  0  ~/.git/rebase-merge/git-rebase-todo
+|4,51,50,0,1739127897,"~/.git/rebase-merge/git-rebase-todo"
 
 # Jumplist (newest first):
+-'  22  0  ~/.git/COMMIT_EDITMSG
+|4,39,22,0,1739128395,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1739128367,"~/.git/COMMIT_EDITMSG"
+-'  20  0  ~/.git/COMMIT_EDITMSG
+|4,39,20,0,1739128250,"~/.git/COMMIT_EDITMSG"
 -'  20  0  ~/.git/COMMIT_EDITMSG
 |4,39,20,0,1739128250,"~/.git/COMMIT_EDITMSG"
 -'  1  0  ~/.git/COMMIT_EDITMSG
@@ -37,6 +49,14 @@
 |4,39,50,0,1739127897,"~/.git/rebase-merge/git-rebase-todo"
 -'  50  0  ~/.git/rebase-merge/git-rebase-todo
 |4,39,50,0,1739127897,"~/.git/rebase-merge/git-rebase-todo"
+-'  50  0  ~/.git/rebase-merge/git-rebase-todo
+|4,39,50,0,1739127897,"~/.git/rebase-merge/git-rebase-todo"
+-'  50  0  ~/.git/rebase-merge/git-rebase-todo
+|4,39,50,0,1739127897,"~/.git/rebase-merge/git-rebase-todo"
+-'  1  0  ~/.git/rebase-merge/git-rebase-todo
+|4,39,1,0,1739127886,"~/.git/rebase-merge/git-rebase-todo"
+-'  1  0  ~/.git/rebase-merge/git-rebase-todo
+|4,39,1,0,1739127886,"~/.git/rebase-merge/git-rebase-todo"
 -'  1  0  ~/.git/rebase-merge/git-rebase-todo
 |4,39,1,0,1739127886,"~/.git/rebase-merge/git-rebase-todo"
 -'  1  0  ~/.git/rebase-merge/git-rebase-todo
@@ -45,8 +65,8 @@
 # History of marks within files (newest to oldest):
 
 > ~/.git/COMMIT_EDITMSG
-	*	1739128248	0
-	"	20	0
+	*	1739128391	0
+	"	22	0
 
 > ~/.git/rebase-merge/git-rebase-todo
 	*	1739127895	0
