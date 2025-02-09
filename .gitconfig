@@ -1,7 +1,9 @@
 [user]
-	name = leei006
-	email = leei006@newschool.edu
+	name = isabelyeajinlee
+	email = izzylee7@icloud.com
 [http]
 	postBuffer = 524288000
 [pull]
 	rebase = false
+[alias]
+	autoadd = add .
