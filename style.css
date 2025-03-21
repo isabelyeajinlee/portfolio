@@ -85,21 +85,6 @@ body {
     white-space: nowrap;
     padding: 30px 50px 80px; /* Reduce padding-top, keep horizontal padding, and add more padding-bottom */
  }
-
- .fullscreen-image {
-   width: 100vw; /* Full viewport width */
-   height: 100vh; /* Full viewport height */
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-.fullscreen-image img {
-   width: 100%; /* Image takes up the full width */
-   height: 100%; /* Image takes up the full height */
-   object-fit: cover; /* Ensures the image covers the entire container */
-}
-
  
  
  .work span {
