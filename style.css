@@ -75,7 +75,7 @@ body {
  
  
  .work {
-    margin-top: 20px; /* Reduce top margin */
+   margin-top: clamp(60px, 10vw, 150px); 
     display: flex;
     align-items: baseline;
     justify-content: flex-start;
