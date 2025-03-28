@@ -1,81 +1,71 @@
 body {
-    font-family: 'Apple Garamond', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
- }
- 
- 
- /* For index.html with no scroll */
- body.no-scroll {
-    padding-top: 60px;
-    min-height: 100vh;
-    overflow-y: hidden; /* No scrolling */
- }
- 
- 
- /* For about.html with scroll */
- body.scrollable {
-    padding-top: 60px;
-    min-height: 100vh;
-    overflow-y: auto; /* Allows scrolling */
- }
- 
- 
- header {
-    display: flex;
-    justify-content: center; /* Center the header */
+   font-family: 'Apple Garamond', sans-serif;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+body.no-scroll {
+   padding-top: 60px;
+   min-height: 100vh;
+   overflow-y: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+   body.no-scroll {
+       overflow-y: auto;
+   }
+}
+
+body.scrollable {
+   padding-top: 60px;
+   min-height: 100vh;
+   overflow-y: auto;
+}
+
+header {
+   display: flex;
+    justify-content: center; 
     align-items: center;
     position: fixed;
     top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    margin: 0 auto;
-    gap: 40px; /* Set a fixed gap to ensure even spacing */
+    left: 0;
+    width: 100%; 
+    padding: 0 20px;
     text-align: center;
-    white-space: nowrap; /* Prevents text wrapping */
-    padding: 0 20px; /* Add some horizontal padding */
- }
- 
- 
- .bio {
-    width: 30%; /* Keeps the width at 30% initially */
-    white-space: normal; /* Ensures the text wraps when needed */
-    text-align: left; /* Aligns the text to the left */
- }
- 
- 
- .about a, .instagram a, .email a, .bio, .home a{
-    font-size: clamp(12px, 2vw, 18px); /* Makes text size responsive */
-    font-weight: 400;
-    text-decoration: none;
-    color: black;
- }
- 
- 
- .about a:hover, .instagram a:hover, .email a:hover, .home a:hover{
-    color: lightgrey;
- }
- 
- 
- /* Prevent the 'Home' link from turning blue after clicking */
- .home a:visited {
-    color: inherit; /* Inherit color from the parent (or set to a specific color you prefer) */
- }
- 
- 
- 
- 
- .work img, .video-container video {
-    width: 30vw; /* Adjusted to match the size of other images */
-    height: auto;
-    object-fit: cover;
- }
- 
- 
- .work {
-   margin-top: clamp(60px, 10vw, 150px); 
+    white-space: nowrap;
+    gap: 125px; 
+}
+
+.bio {
+   width: 30%;
+   white-space: normal;
+   text-align: left;
+}
+
+.about a, .instagram a, .email a, .bio, .home a {
+   font-size: clamp(12px, 2vw, 18px);
+   font-weight: 400;
+   text-decoration: none;
+   color: black;
+}
+
+.about a:hover, .instagram a:hover, .email a:hover, .home a:hover {
+   color: lightgrey;
+}
+
+.home a:visited {
+   color: inherit;
+}
+
+.work img, .video-container video {
+   width: 30vw;
+   height: auto;
+   object-fit: cover;
+}
+
+.work {
+   margin-top: 10px; 
     display: flex;
     align-items: baseline;
     justify-content: flex-start;
@@ -83,184 +73,148 @@ body {
     width: max-content;
     overflow-x: auto;
     white-space: nowrap;
-    padding: 30px 50px 80px; /* Reduce padding-top, keep horizontal padding, and add more padding-bottom */
- }
- 
- 
- .work span {
-    display: inline-block; /* Ensures no additional spacing between items */
- }
- 
- 
- #groove-overlay {
-    position: fixed;
-    top: 50px;
-    left: 0;
-    width: 100vw;
-    height: calc(100vh - 60px);
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
- }
- 
- 
- #groove-overlay img {
-    width: 100%;
-    height: auto;
- }
- 
- 
- #groove-overlay.active {
-    visibility: visible;
-    opacity: 1;
- }
- 
- 
- .cc {
-    margin-top: 40px;
-    position: fixed;
-    bottom: 2%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 80%;
-    text-align: center;
-    width: max-content;
-    z-index: 10;
-    transition: left 0.2s ease-in-out;
- }
- 
- 
- .foodbio {
-    margin-top: 80px;
-    text-align: center;
- }
- 
- 
- .aboutbio {
-    width: 50%;
-    font-size: 18pt;
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
- }
- 
- 
- .video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30vw; /* Ensure it matches the width of images */
- }
- 
- 
- #groove {
-    height: auto;
-    object-fit: contain;
- }
- .aboutbio {
-    width: 50%;
-    font-size: 18pt;
-    margin-top: 80px;
-    margin-bottom: 40px; /* Add margin bottom to create space between bio and the reel */
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
- }
- .p1 {
-    width: 50%;
-    font-size: 18pt;
-    margin-top: 30px;
-    margin-bottom: 40px; /* Add margin bottom to create space between bio and the reel */
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
- }
- 
- 
- .instagram-media {
-    display: block;
-    margin: 20px auto; /* Center and add space around the reel */
-    max-width: 540px;
-    min-width: 326px;
-    width: 100%;
-    text-align: center;
- }
- 
- 
- /* Optional: Add some padding to the iframe inside the reel */
- .instagram-media iframe {
-    padding: 0 10px; /* Adds small padding */
- }
- 
- 
- 
- 
- @media screen and (max-width: 1024px) {
-    body {
-        height: auto;
-        overflow-y: scroll;
-    }
-    .work {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center the stacked elements */
-        justify-content: center; /* Ensures centering */
-        width: 100vw;
-        overflow-x: hidden;
-        gap: 20px;
-        padding: 20px 0; /* Reduce padding to balance spacing */
-    }
- 
- 
-    .work img, .video-container video {
-        width: 90vw; /* Adjust width to fit smaller screens */
-        height: auto;
-        margin: 0 auto;
-    }
- 
- 
-    .video-container {
-        width: 90vw;
-        display: flex;
-        justify-content: center;
-    }
- 
- 
-    .header {
-        width: 50%;
-        padding: 0 10px;
-    }
- }
- 
- 
- @media screen and (max-width: 768px) {
-    .bio {
-        width: 80%; /* Adjust width for better spacing */
-        text-align: left;
-        white-space: nowrap; /* Prevent text from wrapping */
-    }
- 
- 
-    header {
-        gap: 20px; /* Set a smaller gap for smaller screens */
-        padding: 10px;
-        left: 50%; /* Keep the header centered */
-        transform: translateX(-50%); /* Ensure header stays centered */
-        width: auto; /* Adjusts the header width according to content */
-    }
- }
- 
- 
- @media screen and (min-width: 1500px) {
-    .cc {
-        color: white;
-    }
- }
- 
- 
- 
+    padding: 30px 50px 80px;
+}
+
+.work span {
+   display: inline-block;
+}
+
+#groove-overlay {
+   position: fixed;
+   top: 50px;
+   left: 0;
+   width: 100vw;
+   height: calc(100vh - 60px);
+   background: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   visibility: hidden;
+   opacity: 0;
+   transition: opacity 0.3s ease-in-out;
+}
+
+#groove-overlay img {
+   width: 100%;
+   height: auto;
+}
+
+#groove-overlay.active {
+   visibility: visible;
+   opacity: 1;
+}
+
+.cc {
+   margin-top: 40px;
+   position: fixed;
+   bottom: 2%;
+   left: 50%;
+   transform: translateX(-50%);
+   font-size: 80%;
+   text-align: center;
+   width: max-content;
+   z-index: 10;
+   transition: left 0.2s ease-in-out;
+}
+
+.foodbio {
+   margin-top: 80px;
+   text-align: center;
+}
+
+.aboutbio {
+   width: 50%;
+   font-size: 18pt;
+   margin-top: 80px;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+}
+
+.p1 {
+   width: 50%;
+   font-size: 18pt;
+   margin-top: 30px;
+   margin-bottom: 40px;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+}
+
+.instagram-media {
+   display: block;
+   margin: 20px auto;
+   max-width: 540px;
+   min-width: 326px;
+   width: 100%;
+   text-align: center;
+}
+
+.instagram-media iframe {
+   padding: 0 10px;
+}
+
+@media screen and (max-width: 1024px) {
+   body {
+       height: auto;
+       overflow-y: scroll;
+   }
+
+   .work {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       width: 100vw;
+       overflow-x: hidden;
+       gap: 20px;
+       padding: 20px 0;
+   }
+
+   .work img, .video-container video {
+       width: 90vw;
+       height: auto;
+       margin: 0 auto;
+   }
+
+   .video-container {
+       width: 90vw;
+       display: flex;
+       justify-content: center;
+   }
+
+   .header {
+       width: 50%;
+       padding: 0 10px;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .bio {
+       width: 80%;
+       text-align: left;
+       white-space: nowrap;
+   }
+
+   header {
+       gap: 20px;
+       padding: 10px;
+       left: 50%;
+       transform: translateX(-50%);
+       width: auto;
+   }
+   .about a, .instagram a, .email a, .bio, .home a {
+      font-size: clamp(13px, 2vw, 18px);
+      font-weight: 400;
+      text-decoration: none;
+      color: black;
+   }
+   
+}
+
+@media screen and (min-width: 1500px) {
+   .cc {
+       color: white;
+   }
+}
