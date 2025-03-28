@@ -40,7 +40,6 @@ body {
  
  
  .bio {
-   color: pink;
     width: 30%; /* Keeps the width at 30% initially */
     white-space: normal; /* Ensures the text wraps when needed */
     text-align: left; /* Aligns the text to the left */
