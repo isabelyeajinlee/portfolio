@@ -205,7 +205,9 @@ body {
         height: auto;
         overflow-y: scroll;
     }
- 
+    body.no-scroll {
+      overflow-y: auto; /* Allow vertical scrolling */
+  }
  
     .work {
         display: flex;
