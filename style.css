@@ -11,12 +11,6 @@ body.no-scroll {
    overflow-y: hidden;
 }
 
-@media screen and (max-width: 1024px) {
-   body.no-scroll {
-       overflow-y: auto;
-   }
-}
-
 body.scrollable {
    padding-top: 60px;
    min-height: 100vh;
@@ -58,51 +52,19 @@ header {
    color: inherit;
 }
 
-.work img, .video-container video {
-   width: 30vw;
-   height: auto;
-   object-fit: cover;
+.work img{
+   max-width: 100%; 
 }
-
+.work-img{
+   width: 30%;
+   display: inline-block ;
+   margin-right: 2%;
+}
 .work {
-   margin-top: 10px; 
-    display: flex;
-    align-items: baseline;
-    justify-content: flex-start;
-    gap: 40px;
-    width: max-content;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 30px 50px 80px;
-}
-
-.work span {
-   display: inline-block;
-}
-
-#groove-overlay {
-   position: fixed;
-   top: 50px;
-   left: 0;
-   width: 100vw;
-   height: calc(100vh - 60px);
-   background: white;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   visibility: hidden;
-   opacity: 0;
-   transition: opacity 0.3s ease-in-out;
-}
-
-#groove-overlay img {
-   width: 100%;
-   height: auto;
-}
-
-#groove-overlay.active {
-   visibility: visible;
-   opacity: 1;
+   margin-top: 6%;
+   margin-left: 5%;
+   align-items: baseline;
+   white-space: nowrap;
 }
 
 .cc {
@@ -176,6 +138,10 @@ header {
        height: auto;
        overflow-y: scroll;
    }
+   
+   body.no-scroll {
+      overflow-y: auto;
+  }
 
    .work {
        display: flex;
@@ -185,20 +151,14 @@ header {
        width: 100vw;
        overflow-x: hidden;
        gap: 20px;
-       padding: 20px 0;
+       padding: 10px 0;
    }
 
-   .work img, .video-container video {
-       width: 90vw;
-       height: auto;
-       margin: 0 auto;
-   }
-
-   .video-container {
-       width: 90vw;
-       display: flex;
-       justify-content: center;
-   }
+   .work img{
+      width: 100vw; 
+      max-width: 100%;
+      height: auto;
+  }
 
    .header {
        width: 50%;
@@ -227,10 +187,4 @@ header {
       color: black;
    }
    
-}
-
-@media screen and (min-width: 1500px) {
-   .cc {
-       color: white;
-   }
 }
