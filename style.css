@@ -1,73 +1,115 @@
 body {
    font-family: 'Apple Garamond', sans-serif;
+   margin: 0;
+   padding-top: 60px;
+   min-height: 100vh;
+   overflow-x: hidden; /* prevent horizontal scroll */
    display: flex;
    flex-direction: column;
    align-items: center;
-}
-
-body.no-scroll {
-   padding-top: 60px;
-   min-height: 100vh;
+ }
+ 
+ /* Scroll control classes */
+ body.no-scroll {
    overflow-y: hidden;
-}
-
-body.scrollable {
-   padding-top: 60px;
-   min-height: 100vh;
+ }
+ body.scrollable {
    overflow-y: auto;
-}
-
-header {
+ }
+ 
+ /* Fixed header */
+ header {
    display: flex;
-    justify-content: center; 
-    align-items: center;
-    position: fixed;
-    top: 10px;
-    left: 0;
-    width: 100%; 
-    padding: 0 20px;
-    text-align: center;
-    white-space: nowrap;
-    gap: 30px; 
-}
-
-.bio {
-   width: 30%;
-   white-space: normal;
-   text-align: left;
-}
-
-.about a, .instagram a, .email a, .bio, .home a {
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   top: 10px;
+   left: 0;
+   width: 100%;
+   padding: 0 20px;
+   text-align: center;
+   gap: 30px;
+   flex-wrap: wrap;
+   z-index: 100;
+ }
+ 
+ /* Header links */
+ .about a, .instagram a, .email a, .bio, .home a {
    font-size: clamp(12px, 2vw, 18px);
    font-weight: 400;
    text-decoration: none;
    color: black;
-}
-
-.about a:hover, .instagram a:hover, .email a:hover, .home a:hover {
+ }
+ .about a:hover, .instagram a:hover, .email a:hover, .home a:hover {
    color: lightgrey;
-}
-
-.home a:visited {
+ }
+ .home a:visited {
    color: inherit;
-}
-
-.work img{
-   max-width: 100%; 
-}
-.work-img{
+ }
+ 
+ /* Bio text in header */
+ .bio {
    width: 30%;
-   display: inline-block ;
-   margin-right: 2%;
-}
-.work {
-   margin-top: 6%;
-   margin-left: 5%;
-   align-items: baseline;
-   white-space: nowrap;
-}
-
-.cc {
+   white-space: normal;
+   text-align: left;
+ }
+ 
+ /* --- WORK GRID --- */
+ .work {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   align-items: end; /* <-- this aligns items by their bottoms */
+   gap: 20px;
+   padding: 80px 40px 40px;
+   width: 100%;
+   box-sizing: border-box;
+ }
+ .work-img {
+   width: 100%;
+ }
+ .work-img img {
+   width: 100%;
+   height: auto;
+   object-fit: contain;
+   display: block;
+ }
+ 
+ /* GROOVE FULLSCREEN OVERLAY */
+ .groove-fullscreen {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   background-color: white;
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+ }
+ .groove-fullscreen.active {
+   display: flex;
+ }
+ .groove-fullscreen img {
+   max-width: 100%;
+   max-height: 100%;
+   object-fit: contain;
+   cursor: pointer;
+ }
+ #close-overlay {
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   background: none;
+   border: none;
+   font-size: 24px;
+   cursor: pointer;
+   z-index: 1001;
+ }
+ 
+ /* --- OTHER STYLES LEFT UNCHANGED --- */
+ 
+ .cc {
    margin-top: 40px;
    position: fixed;
    bottom: 2%;
@@ -78,23 +120,23 @@ header {
    width: max-content;
    z-index: 10;
    transition: left 0.2s ease-in-out;
-}
-
-.foodbio {
+ }
+ 
+ .foodbio {
    margin-top: 80px;
    text-align: center;
-}
-
-.aboutbio {
+ }
+ 
+ .aboutbio {
    width: 50%;
    font-size: 18pt;
    margin-top: 80px;
    margin-left: auto;
    margin-right: auto;
    text-align: center;
-}
-
-.p1 {
+ }
+ 
+ .p1 {
    width: 50%;
    font-size: 18pt;
    margin-top: 30px;
@@ -102,22 +144,21 @@ header {
    margin-left: auto;
    margin-right: auto;
    text-align: center;
-}
-
-.instagram-media {
+ }
+ 
+ .instagram-media {
    display: block;
    margin: 20px auto;
    max-width: 540px;
    min-width: 326px;
    width: 100%;
    text-align: center;
-}
-
-.instagram-media iframe {
+ }
+ .instagram-media iframe {
    padding: 0 10px;
-}
-
-.surlatableimg {
+ }
+ 
+ .surlatableimg {
    width: 100%;
    max-width: 400px; 
    margin-left: auto;
@@ -126,65 +167,63 @@ header {
    justify-content: center; 
    gap: 10px; 
    margin-bottom: 40px;
-}
-.surlatableimg img {
+ }
+ .surlatableimg img {
    width: 100%; 
    height: auto;
    object-fit: cover;
-}
+ }
 
-@media screen and (max-width: 1024px) {
-   body {
-       height: auto;
-       overflow-y: scroll;
+ @keyframes fadeInUp {
+   from {
+     opacity: 0;
+     transform: translateY(20px);
    }
-   
-   body.no-scroll {
-      overflow-y: auto;
-  }
-
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+ 
+ .work-img {
+   opacity: 0;
+   animation: fadeInUp 0.6s ease forwards;
+ }
+ 
+ /* Optional: stagger the animation */
+ .work-img:nth-child(1) { animation-delay: 0.1s; }
+ .work-img:nth-child(2) { animation-delay: 0.2s; }
+ .work-img:nth-child(3) { animation-delay: 0.3s; }
+ .work-img:nth-child(4) { animation-delay: 0.4s; }
+ .work-img:nth-child(5) { animation-delay: 0.5s; }
+ .work-img:nth-child(6) { animation-delay: 0.6s; }
+ 
+ /* --- MEDIA QUERIES --- */
+ @media screen and (max-width: 1024px) {
    .work {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       justify-content: center;
-       width: 100vw;
-       overflow-x: hidden;
-       gap: 20px;
-       padding: 10px 0;
+     padding: 80px 20px 20px;
+     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
    }
-
-   .work img{
-      width: 100vw; 
-      max-width: 100%;
-      height: auto;
-  }
-
+ 
    .header {
-       width: 50%;
-       padding: 0 10px;
+     width: 100%;
+     padding: 0 10px;
    }
-}
-
-@media screen and (max-width: 768px) {
-   .bio {
-       width: 80%;
-       text-align: left;
-       white-space: nowrap;
-   }
-
+ }
+ 
+ @media screen and (max-width: 768px) {
    header {
-       gap: 20px;
-       padding: 10px;
-       left: 50%;
-       transform: translateX(-50%);
-       width: auto;
+     gap: 20px;
+     padding: 10px;
+     left: 50%;
+     transform: translateX(-50%);
+     width: auto;
+     flex-direction: column;
    }
-   .about a, .instagram a, .email a, .bio, .home a {
-      font-size: clamp(13px, 2vw, 18px);
-      font-weight: 400;
-      text-decoration: none;
-      color: black;
+ 
+   .bio {
+     width: 90%;
+     text-align: center;
+     white-space: normal;
    }
-   
-}
+ }
